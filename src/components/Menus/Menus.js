@@ -1,22 +1,35 @@
 import React from 'react';
 import './Menus.css';
-
 import start_icon from '../../images/start_icon.png';
 import reset_icon from '../../images/reset_icon.png';
+import allUsers from './team.json'
+
 
 
 export class Menus extends React.Component{
     
-    handleText(){
-        console.log('change');
+    handleText(event){
+        let racingUsers = [];
+        //Itarate through the the json object and load the number of users that will be loading
+        for(let i =0; i<event.target.value; i++){
+            racingUsers[i] = {
+                name: allUsers[i]['login'],
+                avaterUrl: allUsers[i]['avatar_url']
+            };
+        }
+
+       // console.log(racingUsers);
+        //Pass users to the parent component
+        this.props.onPopulate(racingUsers);
+
     }
 
     handleStartGame(){
-        alert('hand');
+        console.log('hand');
     }
 
     handleResetGame(){
-        alert('reset');
+        console.log('reset');
     }
     render(){
         return (
@@ -40,7 +53,6 @@ export class Menus extends React.Component{
                         onClick = {this.handleResetGame.bind(this)}
                     />
                 </div> 
-                
                 <div className = 'TimerDiv'>
                     <h2> Time:  </h2>
                     <label className = 'TimeLabele' >
