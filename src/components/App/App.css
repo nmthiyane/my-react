@@ -25,12 +25,6 @@ h1, h2 {
   font-size: 1.5em;
 }
 
-.Components{
-  height: 100px;
-  border: 10px solid blue;
-  margin: auto;
-}
-
 .App-sub-title {
   font-size: 1.2em;
   font-weight: lighter;

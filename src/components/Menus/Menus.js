@@ -52,7 +52,9 @@ export class Menus extends React.Component{
                     />
                 </div> 
                 <div className = 'TimerDiv'>
-                    <h2> Time:  </h2>
+                    <label>
+                       Time:   
+                    </label>
                     <label className = 'TimeLabele' >
                     00:00:00
                     </label>

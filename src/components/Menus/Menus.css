@@ -3,8 +3,9 @@
     border: 2px solid blue;
     border-radius: 2%;
     padding: 10px;
-    margin: 10px;
-    padding-top: 0px;
+    margin: -5px;
+    height: 100px;
+    
 }
 
 .StartButton, .ResetButton{
@@ -20,16 +21,19 @@
 
 input{
     position: relative ;
-    bottom: 70px;
+    bottom: 130px;
+    height: 30px;
 }
 
-img {
+.main-menu img {
+    position: relative;
     width: 150px;
     height: 150px;
+    top: -70px;
 }
 
 .menu-text p {
     position: relative;
     right: 320px;
-    top: 100px;
+    top: 42px;
 }
