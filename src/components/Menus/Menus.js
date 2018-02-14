@@ -8,12 +8,18 @@ export class Menus extends React.Component{
     
     handleText(event){
         //Pass noOfHorses to parent
-        if((event.target.value > 9 || event.target.value) < 2 && (event.target.value !== "")) {     
+        if(event.target.value === ""){
+            //Reset to default
+            this.props.onPopulate(2);
+        }
+        else if(event.target.value > 9 || event.target.value < 2 ) {     
             alert('Number of horses must from 2 - 9');
         }
-        else if(event.target.value !== ""){
+        else {
             this.props.onPopulate(event.target.value);
         }
+
+    
     }
 
     handleStartGame(){
