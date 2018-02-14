@@ -2,26 +2,18 @@ import React from 'react';
 import './Menus.css';
 import start_icon from '../../images/start_icon.png';
 import reset_icon from '../../images/reset_icon.png';
-import allUsers from './team.json'
-
 
 
 export class Menus extends React.Component{
     
     handleText(event){
-        let racingUsers = [];
-        //Itarate through the the json object and load the number of users that will be loading
-        for(let i =0; i<event.target.value; i++){
-            racingUsers[i] = {
-                name: allUsers[i]['login'],
-                avaterUrl: allUsers[i]['avatar_url']
-            };
+        //Pass noOfHorses to parent
+        if((event.target.value > 9 || event.target.value) < 2 && (event.target.value !== "")) {     
+            alert('Number of horses must from 2 - 9');
         }
-
-       // console.log(racingUsers);
-        //Pass users to the parent component
-        this.props.onPopulate(racingUsers);
-
+        else if(event.target.value !== ""){
+            this.props.onPopulate(event.target.value);
+        }
     }
 
     handleStartGame(){

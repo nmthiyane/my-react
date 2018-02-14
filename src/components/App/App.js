@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import logo from '../../images/logo.svg';
 import './App.css';
 import {Menus} from '../Menus';
-import {RaceCourse} from '../RaceCourse';
+import {HorseList} from '../HorseList';
  
 export class App extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      users: []
+      noOfHorses: 2
     };
   }
 
-  //Adding users to the state
-  populateUsers(users){
-    this.setState({ users });
-    console.log(this.state.users);
+  //update number of horses
+  populateUsers(noOfHorses){
+    this.setState({noOfHorses });
+    console.log(this.state.noOfHorses);
   }
 
   render() {
@@ -32,8 +32,8 @@ export class App extends Component {
         <Menus 
           onPopulate = {this.populateUsers.bind(this)}
         />
-        <RaceCourse 
-          racingUsers = {this.state.users} 
+        <HorseList 
+          noOfHorses = {this.state.noOfHorses} 
         />
       </div>
 
