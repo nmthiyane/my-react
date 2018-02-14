@@ -5,7 +5,8 @@
  */
 
 import React from 'react';
-import allUsers from './team.json'
+import allUsers from './team.json';
+
 
 export class Horse extends React.Component{
     render(){
@@ -28,26 +29,39 @@ export class Horse extends React.Component{
 }
 
 export class HorseList extends React.Component{
-   
-    populateHorses(noOfHorses){
+    
+    populateHorses() {
+        //Create an array with unique random
+        let randomValues = [];
+        while(randomValues.length < this.props.noOfHorses){
+            const randomValue = Math.floor(Math.random()*9) + 2;
+            //Only add user if not already on the array
+            if(randomValues.indexOf(randomValue) !==-1){
+                randomValues.push(randomValue);
+            }
+        };
+
+        //Itarate through the the json object and random unique users
         var racingHorses = [];
-        //Itarate through the the json object and load the number of users that will be loading
-        for(let i =0; i< noOfHorses; i++){
+        for(let i =0; i< this.props.noOfHorses; i++){
+            let position = randomValues[i];
             racingHorses[i] = {
-                name: allUsers[i]['login'],
-                avaterUrl: allUsers[i]['avatar_url']
+                name: allUsers[position]['login'],
+                avatarUrl: allUsers[position]['avatar_url']
             };
-            //Calling the hourse object
         }
+       console.log(racingHorses[1]['avatarUrl']);
+        return racingHorses;
     }
     
     render() {
         return (
+            //Calling the hourse object
             <div>
-                {this.racingHorses.map( horse=> 
+                {this.populateHorses().map( horse=> 
                     <Horse 
-                        avatarUrl = {horse['avatar_url']}
-                        username = {horse['username']}
+                        avatarUrl = {horse['avatarUrl']}
+                        username = {horse['name']}
                     />
                 )
                 }
