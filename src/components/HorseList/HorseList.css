@@ -1,0 +1,11 @@
+.HorseDiv{
+    position: relative;
+    text-align: left;
+    padding: 20px;
+}
+
+.HorseDiv img{
+    height: 100px;
+    width: 100px;
+    padding-bottom: 0px;
+}

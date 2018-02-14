@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import './HorseList.css';
 import allUsers from './team.json';
 
 
@@ -12,16 +13,16 @@ export class Horse extends React.Component{
     render(){
         return (
             <div className = 'HorseDiv'>
+                <div>
+                    <h4 className = 'Horse Name'>
+                        {this.props.username}
+                    </h4>
+                </div>
                 <div className = 'avatar'>
                     <img 
                         src = {this.props.avatarUrl}
                         alt = 'Horse avatar'
                     />
-                </div>
-                <div>
-                    <h3 className = 'Horse Name'>
-                        {this.props.username}
-                    </h3>
                 </div>
             </div>
         );

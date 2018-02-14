@@ -4,16 +4,18 @@ h1, h2 {
 
 .App {
   text-align: center;
+  display: block;
 }
 
 .App-logo {
+  float: left;
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
 .App-header {
   background-color: #014373;
-  height: 160px;
+  height: 80px;
   padding: 20px;
   color: white;
 }
@@ -21,6 +23,12 @@ h1, h2 {
 .App-title {
   margin-top: 10px;
   font-size: 1.5em;
+}
+
+.Components{
+  height: 100px;
+  border: 10px solid blue;
+  margin: auto;
 }
 
 .App-sub-title {
