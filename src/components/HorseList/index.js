@@ -1,1 +1,1 @@
-export * from '../HorseList'
+export * from './HorseList'
