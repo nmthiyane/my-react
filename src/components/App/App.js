@@ -16,7 +16,6 @@ export class App extends Component {
   //update number of horses
   populateUsers(noOfHorses){
     this.setState({noOfHorses });
-    console.log(this.state.noOfHorses);
   }
 
   render() {
