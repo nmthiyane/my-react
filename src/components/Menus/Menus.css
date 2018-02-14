@@ -1,0 +1,30 @@
+.menu-text{
+    display: block;
+    border: 2px solid blue;
+    border-radius: 2%;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.TimerDiv h2{
+    position: relative;
+    left: 400px;
+    float: left;
+}
+
+input{
+    position: relative ;
+    bottom: 70px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.menu-text p {
+    position: relative;
+    right: 320px;
+    top: 100px;
+}

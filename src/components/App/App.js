@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../../images/logo.svg';
 import './App.css';
+import {Menus} from '../Menus';
 
 export class App extends Component {
   render() {
@@ -12,8 +13,8 @@ export class App extends Component {
           <h2 className="App-sub-title">Kurtosys Grads</h2>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/components/App/App.js</code> and save to reload.
         </p>
+        <Menus />
       </div>
     );
   }
