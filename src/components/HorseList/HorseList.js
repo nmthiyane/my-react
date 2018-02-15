@@ -10,6 +10,13 @@ import allUsers from './team.json';
 
 
 export class Horse extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            progress: 10
+        }
+    }
     render(){
         return (
             <div className = 'HorseDiv'>
@@ -20,6 +27,7 @@ export class Horse extends React.Component{
                         src = {this.props.avatarUrl}
                         alt = 'Horse avatar'
                     />
+                    <progress value={this.state.progress} max="100"></progress> 
             </div>
         );
     }
@@ -57,8 +65,7 @@ export class HorseList extends React.Component{
                         avatarUrl = {horse['avatarUrl']}
                         username = {horse['name']}
                     />
-                )
-                }
+                )}
             </div>
         );
     }

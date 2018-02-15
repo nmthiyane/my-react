@@ -24,6 +24,10 @@ h1, h2 {
   text-align: center;
   display: block;
   min-width: 1500px;
+  padding: 0px 1% 0px 1%;
+
+
+
 }
 
 .App-title {
