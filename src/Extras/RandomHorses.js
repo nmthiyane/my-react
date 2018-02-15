@@ -5,7 +5,7 @@
  */
 import allUsers from './team.json';
 
-export function populateHorses(noOfHorses){
+export function RandomHorses(noOfHorses){
     //Generate random numbers to make users random
     let randomHorses = [];
     while(randomHorses.length < noOfHorses){
@@ -17,7 +17,7 @@ export function populateHorses(noOfHorses){
     }
     //Create objects of users in json file
     let racingHorses = [];
-    for(let i =0; i< this.props.noOfHorses; i++){
+    for(let i =0; i< noOfHorses; i++){
         let position = randomHorses[i];
         racingHorses[i] = {
             name: allUsers[position]['login'],

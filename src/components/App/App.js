@@ -3,22 +3,36 @@ import logo from '../../images/horse.png';
 import './App.css';
 import {Menus} from '../Menus';
 import {HorseList} from '../HorseList';
+import {RandomHorses} from '../../Extras/RandomHorses.js';
  
 export class App extends Component {
 
   constructor(props){
     super(props);
+    
     this.state = {
       noOfHorses: 2,
-      start: false
+      start: false,
+      racingHorses: []
     };
+
     this.populateUsers = this.populateUsers.bind(this);
     this.startGame = this.startGame.bind(this);
+    this.returnRandomHorses = this.returnRandomHorses.bind(this);
+  }
+
+  //Calls the JS files that generate uses read from the json file
+  returnRandomHorses(horses){
+    return RandomHorses(horses);
+  }
+
+  componentDidMount(){
+    this.setState({racingHorses: this.returnRandomHorses(2)});
   }
 
   //update number of horses
   populateUsers(noOfHorses){
-    this.setState({noOfHorses });
+    this.setState({noOfHorses, racingHorses: this.returnRandomHorses(noOfHorses)});
   }
 
   //Update start game state
@@ -43,6 +57,7 @@ export class App extends Component {
           />
           <HorseList 
             noOfHorses = {this.state.noOfHorses}
+            allHorses = {this.state.racingHorses}
           />
         </div>
       </div>

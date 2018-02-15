@@ -12,7 +12,7 @@ export class Menus extends React.Component{
         this.handleStartGame = this.handleStartGame.bind(this);
         this.handleResetGame = this.handleResetGame.bind(this);
     }
-    
+
     handleText(event){
         const value = event.target.value;
         //Pass noOfHorses to parent
@@ -20,7 +20,7 @@ export class Menus extends React.Component{
             //Reset to default
             this.props.onPopulate(2);
         }
-        else if(value > 9 || value < 2 ) {     
+        else if(value < 2 || value > 9) {     
             alert('Number of horses must from 2 - 9');
         }
         else {
