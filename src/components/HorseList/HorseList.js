@@ -60,7 +60,7 @@ export class HorseList extends React.Component{
         return (
             //Calling the hourse object
              <div>
-                {this.populateHorses().map( horse=> 
+                {this.populateHorses().map( (horse, i) => 
                     <Horse 
                         avatarUrl = {horse['avatarUrl']}
                         username = {horse['name']}

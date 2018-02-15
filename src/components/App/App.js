@@ -12,6 +12,8 @@ export class App extends Component {
       noOfHorses: 2,
       start: false
     };
+    this.populateUsers = this.populateUsers.bind(this);
+    this.startGame = this.startGame.bind(this);
   }
 
   //update number of horses
@@ -19,6 +21,7 @@ export class App extends Component {
     this.setState({noOfHorses });
   }
 
+  //Update start game state
   startGame(start){
     this.setState({start});
   }
@@ -35,8 +38,8 @@ export class App extends Component {
         </p>
         <div className = 'Components'>
           <Menus 
-            onPopulate = {this.populateUsers.bind(this)}
-            onStart = {this.startGame.bind(this)}
+            onPopulate = {this.populateUsers}
+            onStart = {this.startGame}
           />
           <HorseList 
             noOfHorses = {this.state.noOfHorses}

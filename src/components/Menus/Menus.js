@@ -5,25 +5,31 @@ import reset_icon from '../../images/reset_icon.png';
 
 
 export class Menus extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.handleText = this.handleText.bind(this);
+        this.handleStartGame = this.handleStartGame.bind(this);
+        this.handleResetGame = this.handleResetGame.bind(this);
+    }
     
     handleText(event){
+        const value = event.target.value;
         //Pass noOfHorses to parent
-        if(event.target.value === ""){
+        if(value === ""){
             //Reset to default
             this.props.onPopulate(2);
         }
-        else if(event.target.value > 9 || event.target.value < 2 ) {     
+        else if(value > 9 || value < 2 ) {     
             alert('Number of horses must from 2 - 9');
         }
         else {
-            this.props.onPopulate(event.target.value);
+            this.props.onPopulate(value);
         }
-
-    
     }
 
     handleStartGame(){
-        console.log('hand');
+        this.props.onStart(true);
     }
 
     handleResetGame(){
@@ -37,18 +43,18 @@ export class Menus extends React.Component{
                     <input 
                         type='text' 
                         maxLength="10"
-                        onChange = {this.handleText.bind(this)}
+                        onChange = {this.handleText}
                         placeholder = "2=< horses =<9" required
                     />
                     <img className = 'StartButton'
                         src = {start_icon}
                         alt = 'Start icon'
-                        onClick = {this.handleStartGame.bind(this)}
+                        onClick = {this.handleStartGame}
                     />
                     <img className = 'ResetButton'
                         src = {reset_icon}
                         alt = 'Reset Button'
-                        onClick = {this.handleResetGame.bind(this)}
+                        onClick = {this.handleResetGame}
                     />
                 </div> 
                 <div className = 'TimerDiv'>

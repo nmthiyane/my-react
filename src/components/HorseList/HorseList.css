@@ -10,14 +10,14 @@
     bottom: 10px;
 }
 .HorseDiv progress{
+    position: relative;
     height: 60px;
-   /* background-color: #4CAF50; */
     text-align: center; /* To center it horizontally (if you want) */
     line-height: 30px; /* To center it vertically */
     width: 90% ;
-    color: green; 
+    color: blueviolet; 
     margin: auto;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     padding-left: 30px;
 }
 .HorseDiv img{
