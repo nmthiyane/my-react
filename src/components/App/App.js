@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../images/logo.svg';
+import logo from '../../images/horse.png';
 import './App.css';
 import {Menus} from '../Menus';
 import {HorseList} from '../HorseList';
@@ -9,13 +9,18 @@ export class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      noOfHorses: 2
+      noOfHorses: 2,
+      start: false
     };
   }
 
   //update number of horses
   populateUsers(noOfHorses){
     this.setState({noOfHorses });
+  }
+
+  startGame(start){
+    this.setState({start});
   }
 
   render() {
@@ -31,9 +36,10 @@ export class App extends Component {
         <div className = 'Components'>
           <Menus 
             onPopulate = {this.populateUsers.bind(this)}
+            onStart = {this.startGame.bind(this)}
           />
           <HorseList 
-            noOfHorses = {this.state.noOfHorses} 
+            noOfHorses = {this.state.noOfHorses}
           />
         </div>
       </div>

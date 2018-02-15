@@ -26,7 +26,6 @@ export class Horse extends React.Component{
 }
 
 export class HorseList extends React.Component{
-    
     populateHorses(){
         //Generate random numbers to make users random
         let randomHorses = [];
