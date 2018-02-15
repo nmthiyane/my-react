@@ -5,6 +5,8 @@ h1, h2 {
 .App {
   text-align: center;
   display: block;
+  background-color: #9bbcd3;
+  height: 10000px;
 }
 
 .App-logo {

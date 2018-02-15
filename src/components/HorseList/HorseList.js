@@ -8,14 +8,8 @@ import './HorseList.css';
 
 
 export class Horse extends React.Component{
-    constructor(props){
-        super(props);
 
-        this.state = {
-            progress: 10
-        }
-    }
-    
+
     render(){
         return (
             <div className = 'HorseDiv'>
@@ -26,21 +20,32 @@ export class Horse extends React.Component{
                         src = {this.props.avatarUrl}
                         alt = 'Horse avatar'
                     />
-                    <progress value={this.state.progress} max="100"></progress> 
+                    <progress value={this.props.progress} max="100"></progress> 
             </div>
         );
     }
 }
 
 export class HorseList extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            interval: 2,
+            progress: 60
+        }
+    }
+    
+
     render() {
         return (
             //Calling the hourse object
-             <div>
+             <div className = 'ListDiv'>
                 {this.props.allHorses.map( (horse, i) => 
                     <Horse 
                         avatarUrl = {horse['avatarUrl']}
                         username = {horse['name']}
+                        progress = {this.state.progress}
                     />
                 )}
             </div>
