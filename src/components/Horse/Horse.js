@@ -14,7 +14,6 @@ export class Horse extends React.Component{
             interval: 2,
             progress: 0
         }
-
         this.randomIncrement = this.generateRandom.bind(this);
     }
 
@@ -27,18 +26,21 @@ export class Horse extends React.Component{
     //     setInterval(this.randomIncrement, 100000);
     //     console.log('dsfdffwe');
     // }
-    
+
+    incrementInterval(){
+        this.setState({progress: this.state.progress + (Math.floor(Math.random()* 10) + 1)})
+    }
     //This function will generate a random increment to each horse progress
     generateRandom(){
         console.log('dsfdffwe');
-        setInterval(this.randomIncrement, 5000);
+        setInterval(this.incrementInterval.bind(this), 1000);
         return (Math.floor(Math.random()* 10) + 1);
     }
 
     render(){
         //Checks if the game has started
         if(this.props.startGame && this.state.progress < 100){
-            this.setState({progress: this.state.progress + this.randomIncrement()});
+            this.randomIncrement();
         }
         else if(!this.props.startGame && this.state.progress >= 100){
             this.setState({progress: 0});
