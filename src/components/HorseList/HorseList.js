@@ -17,14 +17,37 @@ export class HorseList extends React.Component{
         }
     }
 
-    render() {
+   ComponentWillMount(){
         if(this.props.startGame){
-            let progress =  this.state.progess+30;
+            let progress =  100;
             this.setState({progress});
+            console.log("qerewrew" + this.state.progress);
             this.props.onStart(false);
+        } 
+        console.log("qerewrew" + this.state.progress);
+   }
+
+   ComponentDidMount(){
+    if(this.props.startGame){
+        let progress =  100;
+        this.setState({progress});
+        console.log("qerewrew" + this.state.progress);
+        this.props.onStart(false);
+    } 
+    console.log("qerewrew" + this.state.progress);
+    }
+
+    render() {
+        if(this.props.startGame && this.state.progress < 100){
+            this.setState({progress: this.state.progress + 10});
         }
-        
-        console.log(this.props.startGame);
+
+        console.log(this.state.progress);
+        if(!this.props.startGame && this.state.progress == 100){
+            this.setState({progress: this.state.progress - 100});
+            console.log('here');
+        }
+
         return (
             //Calling the hourse object
              <div className = 'ListDiv'>

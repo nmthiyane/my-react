@@ -33,7 +33,8 @@ export class Menus extends React.Component{
     }
 
     handleResetGame(){
-        console.log('reset');
+        this.props.onStart(false);
+        console.log('d');
     }
     render(){
         return (
