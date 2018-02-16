@@ -58,7 +58,8 @@ export class App extends Component {
           <HorseList 
             noOfHorses = {this.state.noOfHorses}
             allHorses = {this.state.racingHorses}
-            startGame = {this.props.start}
+            startGame = {this.state.start}
+            onStart = {this.startGame}
           />
         </div>
       </div>

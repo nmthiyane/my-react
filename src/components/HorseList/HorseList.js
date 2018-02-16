@@ -1,30 +1,11 @@
 /**
  * Author: Ntuthuko Mthiyane
  * Date: 14/02/2018
- * Description: This component is responsible for rendering a single horse
+ * Description: This component is responsible for creating multiple horse components
  */
 import React from 'react';
+import {Horse} from '../Horse';
 import './HorseList.css';
-
-
-export class Horse extends React.Component{
-
-
-    render(){
-        return (
-            <div className = 'HorseDiv'>
-                    <h4 className = 'Horse Name'>
-                        {this.props.username}
-                    </h4>
-                    <img 
-                        src = {this.props.avatarUrl}
-                        alt = 'Horse avatar'
-                    />
-                    <progress value={this.props.progress} max="100"></progress> 
-            </div>
-        );
-    }
-}
 
 export class HorseList extends React.Component{
     constructor(props){
@@ -32,12 +13,18 @@ export class HorseList extends React.Component{
 
         this.state = {
             interval: 2,
-            progress: 60
+            progress: 0
         }
     }
-    
 
     render() {
+        if(this.props.startGame){
+            let progress =  this.state.progess+30;
+            this.setState({progress});
+            this.props.onStart(false);
+        }
+        
+        console.log(this.props.startGame);
         return (
             //Calling the hourse object
              <div className = 'ListDiv'>
