@@ -6,9 +6,46 @@
 import React from 'react';
 import './Horse.css';
 
-
 export class Horse extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            interval: 2,
+            progress: 0
+        }
+
+        this.randomIncrement = this.generateRandom.bind(this);
+    }
+
+    // ComponentDidMount(){
+    //     setInterval(this.randomIncrement, 100000);
+    //     console.log('dsfdffwe');
+    // }
+
+    // ComponentDidUpdate(){
+    //     setInterval(this.randomIncrement, 100000);
+    //     console.log('dsfdffwe');
+    // }
+    
+    //This function will generate a random increment to each horse progress
+    generateRandom(){
+        console.log('dsfdffwe');
+        setInterval(this.randomIncrement, 5000);
+        return (Math.floor(Math.random()* 10) + 1);
+    }
+
     render(){
+        //Checks if the game has started
+        if(this.props.startGame && this.state.progress < 100){
+            this.setState({progress: this.state.progress + this.randomIncrement()});
+        }
+        else if(!this.props.startGame && this.state.progress >= 100){
+            this.setState({progress: 0});
+            console.log('here');
+        }
+        console.log(this.state.progress);
+
         return (
             <div className = 'HorseDiv'>
                     <h4 className = 'Horse Name'>
@@ -18,7 +55,7 @@ export class Horse extends React.Component{
                         src = {this.props.avatarUrl}
                         alt = 'Horse avatar'
                     />
-                    <progress value={this.props.progress} max="100"></progress> 
+                    <progress value={this.state.progress} max="100"></progress> 
             </div>
         );
     }
