@@ -22,8 +22,7 @@ export class Horse extends React.Component{
     }
     //This function will generate a random increment to each horse progress
     generateRandom(){
-        console.log('dsfdffwe');
-        setInterval(this.incrementInterval.bind(this), 1000);
+        setInterval(this.incrementInterval.bind(this), 800);
         return (Math.floor(Math.random()* 10) + 1);
     }
 
@@ -34,9 +33,7 @@ export class Horse extends React.Component{
         }
         else if(!this.props.startGame && this.state.progress >= 100){
             this.setState({progress: 0});
-            console.log('here');
         }
-        console.log(this.state.progress);
 
         return (
             <div className = 'HorseDiv'>
