@@ -17,16 +17,6 @@ export class Horse extends React.Component{
         this.randomIncrement = this.generateRandom.bind(this);
     }
 
-    // ComponentDidMount(){
-    //     setInterval(this.randomIncrement, 100000);
-    //     console.log('dsfdffwe');
-    // }
-
-    // ComponentDidUpdate(){
-    //     setInterval(this.randomIncrement, 100000);
-    //     console.log('dsfdffwe');
-    // }
-
     incrementInterval(){
         this.setState({progress: this.state.progress + (Math.floor(Math.random()* 10) + 1)})
     }
