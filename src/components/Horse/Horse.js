@@ -31,7 +31,7 @@ export class Horse extends React.Component{
         if(this.props.startGame && this.state.progress < 100){
             this.randomIncrement();
         }
-        else if(!this.props.startGame && this.state.progress >= 100){
+        else if(!this.props.startGame && this.state.progress !== 0){
             this.setState({progress: 0});
         }
 
