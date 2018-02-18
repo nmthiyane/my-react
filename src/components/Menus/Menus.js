@@ -36,6 +36,7 @@ export class Menus extends React.Component{
     handleResetGame(){
         this.props.onStart(false);
     }
+    
     render(){
         return (
             <div className = 'main-menu'>

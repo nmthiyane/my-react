@@ -27,7 +27,6 @@ export class Horse extends React.Component{
     }
 
     startTimer(){
-
         setInterval(this.incrementProgress(), (Math.floor(Math.random()* 800) + 1));
     }
 
@@ -42,6 +41,7 @@ export class Horse extends React.Component{
         this.setState({progress: 0});
         this.setState({isFinish: false});
     }
+    
     render(){
         //Checks if the game has started
         if(this.props.startGame && this.state.progress < 100){

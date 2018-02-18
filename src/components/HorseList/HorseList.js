@@ -26,7 +26,6 @@ export class HorseList extends React.Component{
     }
 
     //remove all those horses that were declared as completed race
-
     resetWinner(){
         this.setState({horsesArray: []});
     }
@@ -36,7 +35,7 @@ export class HorseList extends React.Component{
         if(!this.props.startGame && this.state.horsesArray.length > 0){
             this.resetWinner();
         }
-        
+
         return (
             //Calling the hourse object
              <div className = 'main-div'>
