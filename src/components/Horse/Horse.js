@@ -15,35 +15,45 @@ export class Horse extends React.Component{
             progress: 0,
             isFinish: false
         }
-        this.randomIncrement = this.generateRandom.bind(this);
+        this.startTimer = this.startTimer.bind(this);
         this.addToFinish = this.addToFinish.bind(this);
+        this.incrementProgress = this.incrementProgress.bind(this);
+        this.handleRestart = this.handleRestart.bind(this);
     }
 
-    incrementInterval(){
-        this.setState({progress: this.state.progress + (Math.floor(Math.random()* 10) + 1)})
-    }
     //This function will generate a random increment to each horse progress
-    generateRandom(){
-        setInterval(this.incrementInterval.bind(this), 800);
-        return (Math.floor(Math.random()* 10) + 1);
+    incrementProgress(){
+        this.setState({progress: this.state.progress + 1})
     }
+
+    startTimer(){
+
+        setInterval(this.incrementProgress(), (Math.floor(Math.random()* 800) + 1));
+    }
+
     //alert the parent that the horse has completed the race
     addToFinish(username){
         this.setState({isFinish: true});
         this.props.addFinishedHorse(username);
     }
 
+    //Update the state when the game is restarted
+    handleRestart(){
+        this.setState({progress: 0});
+        this.setState({isFinish: false});
+    }
     render(){
         //Checks if the game has started
         if(this.props.startGame && this.state.progress < 100){
-            this.randomIncrement();
+            this.startTimer();
         }
         //once the horse completes the horse, declare as finish and alert the parent
         else if(this.state.progress >=100 && !this.state.isFinish){
             this.addToFinish(this.props.username);
         }
+        //when game is restarted, changed the progress to 0. 
         else if(!this.props.startGame && this.state.progress !== 0){
-            this.setState({progress: 0});
+            this.handleRestart();
         }
 
         return (

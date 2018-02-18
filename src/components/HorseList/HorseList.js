@@ -17,6 +17,7 @@ export class HorseList extends React.Component{
             horsesArray: []
         }
         this.addFinishedHorse = this.addFinishedHorse.bind(this);
+        this.resetWinner = this.resetWinner.bind(this);
     }
 
     //As soon as a horse completes the race, it is added to the horse list
@@ -24,7 +25,18 @@ export class HorseList extends React.Component{
         this.setState({horsesArray: this.state.horsesArray.concat(horse)});
     }
 
+    //remove all those horses that were declared as completed race
+
+    resetWinner(){
+        this.setState({horsesArray: []});
+    }
+
     render() {
+        //If the game is restarted
+        if(!this.props.startGame && this.state.horsesArray.length > 0){
+            this.resetWinner();
+        }
+        
         return (
             //Calling the hourse object
              <div className = 'main-div'>
