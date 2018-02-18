@@ -38,7 +38,6 @@ export class App extends Component {
   //Update start game state
   startGame(start){
     this.setState({start});
-    console.log(start);
   }
 
   render() {
