@@ -58,14 +58,6 @@ export class Menus extends React.Component{
                         onClick = {this.handleResetGame}
                     />
                 </div> 
-                <div className = 'TimerDiv'>
-                    <label>
-                       Time:
-                    </label>
-                    <label className = 'TimeLabele' >
-                    00:00:00
-                    </label>
-                </div>
             </div>   
         );
     }

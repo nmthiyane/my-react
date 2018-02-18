@@ -47,7 +47,7 @@ export class Horse extends React.Component{
         }
 
         return (
-            <div className = 'HorseDiv'>
+                <div className = 'HorseDiv'>
                     <h4 className = 'Horse Name'>
                         {this.props.username}
                     </h4>
@@ -56,7 +56,7 @@ export class Horse extends React.Component{
                         alt = 'Horse avatar'
                     />
                     <progress value={this.state.progress} max="100"></progress> 
-            </div>
+                </div>
         );
     }
 }

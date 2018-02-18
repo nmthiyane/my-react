@@ -16,13 +16,6 @@
     left: 400px;
     float: left;
 }
-.TimerDiv{
-   top: 30px;
-    position: relative;
-    left: 400px;
-    float: left;
-    
-}
 
 input{
     position: relative ;
@@ -48,8 +41,4 @@ input{
     height: 200px;
     width: 100%;
 
-}
-.TimerDiv label {
-    padding-left: 350px;
-    text-align: center;
 }
