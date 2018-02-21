@@ -20,7 +20,7 @@ export class Menus extends React.Component{
             //Reset to default
             this.props.onPopulate(2);
         }
-        else if(value < 2 || value > 9) {     
+        else if(value < 2 || value > 9) {
             alert('Number of horses must from 2 - 9');
         }
         else {
@@ -35,6 +35,7 @@ export class Menus extends React.Component{
     handleResetGame(){
         this.props.onStart(false);
         this.props.onPopulate(2);
+ 
     }
     
     render(){
