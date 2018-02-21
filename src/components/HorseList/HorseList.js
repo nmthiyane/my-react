@@ -48,12 +48,13 @@ export class HorseList extends React.Component{
                     </label>
                 </div>                
                 <div className = 'ListDiv'>
-                    {this.props.allHorses.map( (horse) => 
+                    {this.props.allHorses.map( (horse, key) => 
                         <Horse 
                           avatarUrl = {horse['avatarUrl']}
                           username = {horse['name']}
                           startGame = {this.props.startGame}
                           addFinishedHorse  = {this.addFinishedHorse }
+                          key = {key}
                     />
                     )}
                 </div>

@@ -11,7 +11,7 @@ export class Horse extends React.Component{
         super(props);
 
         this.state = {
-            interval: 2,
+            interval: 0,
             progress: 0,
             isFinish: false
         }
@@ -21,13 +21,23 @@ export class Horse extends React.Component{
         this.handleRestart = this.handleRestart.bind(this);
     }
 
+    componentDidMount(){
+        this.setState({interval: (Math.floor(Math.random()* 4000) + 1)});
+    }
+
     //This function will generate a random increment to each horse progress
     incrementProgress(){
+        if(this.state.progress>100){
+            return
+        }
         this.setState({progress: this.state.progress + 1})
+        console.log(this.props.username + ' ' + this.state.progress);
+        console.log(this.props.username + ' ' + this.state.interval);
+
     }
 
     startTimer(){
-        setInterval(this.incrementProgress(), (Math.floor(Math.random()* 800) + 1));
+        setInterval(this.incrementProgress, this.state.interval);
     }
 
     //alert the parent that the horse has completed the race
@@ -45,6 +55,7 @@ export class Horse extends React.Component{
     render(){
         //Checks if the game has started
         if(this.props.startGame && this.state.progress < 100){
+            console.log(this.props.startGame + ' ' + this.state.progress);
             this.startTimer();
         }
         //once the horse completes the horse, declare as finish and alert the parent

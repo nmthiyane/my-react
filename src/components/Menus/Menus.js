@@ -30,11 +30,11 @@ export class Menus extends React.Component{
 
     handleStartGame(){
         this.props.onStart(true);
-        this.props.onPopulate(2);
     }
 
     handleResetGame(){
         this.props.onStart(false);
+        this.props.onPopulate(2);
     }
     
     render(){
