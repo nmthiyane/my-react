@@ -11,7 +11,6 @@ export class Horse extends React.Component {
         super(props);
 
         this.state = {
-            interval: 0,
             progress: 0,
             isFinish: false
         }
