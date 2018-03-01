@@ -26,3 +26,5 @@ export function RandomHorses(noOfHorses){
     }
     return racingHorses;
 }
+
+//module.export = RandomHorses;
